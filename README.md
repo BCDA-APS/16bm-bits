@@ -1,7 +1,6 @@
 # BITS Starter
 
-Instrument Github Repository to be used with BITS structure at the APS
-
+APS 16BM B & D operations using Bluesky, with BITS structure
 
 ## Installing your own BITS instrument
 
