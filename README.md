@@ -2,25 +2,36 @@
 
 APS 16BM B & D operations using Bluesky, with BITS structure
 
-## Installing your own BITS instrument
+## One-time Setup
+### Installing your own BITS instrument
 
 ```bash
-export ENV_NAME=BITS_env
-conda create -y -n $ENV_NAME python=3.11
-conda activate $ENV_NAME
+conda create -y -n 16bm-bits python=3.11 hkl pyepics
+conda activate 16bm-bits
 pip install apsbits
 ```
 
 
-## Creating a New Instrument
+### Creating a New Instrument
+
+For each new instrument to be added, create initial configuration. (Modify the
+`YOUR_INSTRUMENT_NAME` below used for 16BM-B.  Python packages must now start
+with a number, that's why `bm` comes first.)
+
 ```bash
-export YOUR_INSTRUMENT_NAME=new_instrument
+export YOUR_INSTRUMENT_NAME=bm16_b
 create-bits $YOUR_INSTRUMENT_NAME
-pip install -e .
+pip install -e .[all]
 ```
 
 
 ## IPython console Start
+
+Activate the conda environment:
+
+```bash
+conda activate 16bm-bits
+```
 
 To start the bluesky instrument session in a ipython execute the next command in a terminal:
 
@@ -33,8 +44,10 @@ Start JupyterLab, a Jupyter notebook server, or a notebook, VSCode.
 
 ## Starting the BITS Package
 
+Either `bm16_b` or `bm16_d`:
+
 ```py
-from YOUR_INSTRUMENT_NAME.startup import *
+from bm16_b.startup import *
 ```
 
 ## Run Sim Plan Demo
