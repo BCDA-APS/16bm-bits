@@ -4,5 +4,6 @@
 
 apstools.devices.ApsMachineParametersDevice:
 - name: aps
-  labels:
-  - baseline
+# TODO: uncomment once the workstation "spyder" can access the PVs
+#  labels:
+#  - baseline

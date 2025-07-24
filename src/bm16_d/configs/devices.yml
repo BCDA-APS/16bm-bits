@@ -1,5 +1,7 @@
 # Guarneri-style device YAML configuration
 
+# APS devices: https://bcda-aps.github.io/apstools/latest/api/_devices.html
+
 apsbits.utils.sim_creator.predefined_device:
 - { creator: ophyd.sim.motor, name: sim_motor }
 - { creator: ophyd.sim.noisy_det, name: sim_det }
@@ -20,15 +22,10 @@ apstools.devices.SimulatedApsPssShutterWithStatus:
 #   prefix: ioc:Slit1
 #   labels: ["slits", "baseline"]
 
-# hkl.SimulatedE4CV:
-# - name: sim4c
-#   prefix: ""
-#   labels: ["diffractometer"]
-
-# ophyd.scaler.ScalerCH:
-# - name: scaler1
-#   prefix: vme:scaler1
-#   labels: ["scalers", "detectors"]
+ophyd.scaler.ScalerCH:
+- name: scaler1
+  prefix: 16bmd:scaler1
+  labels: ["scalers", "detectors"]
 
 # ophyd.EpicsMotor:
 # - {name: m1, prefix: gp:m1, labels: ["motor"]}
